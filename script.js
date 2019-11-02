@@ -250,5 +250,22 @@ for (let i = 0; i < fifthRowKeys.length; i++) {
   spanRu.insertAdjacentHTML('beforeend', `<span class="case case_up">${row5[i][4]}</span>`);
 }
 
+function insertText(text) {
+  if (textarea.innerHTML === '') {
+    textarea.innerHTML = text;
+  } else {
+    textarea.innerHTML = textarea.innerHTML + text;
+  }
+  
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key != 'Tab' && event.key != 'Shift' && event.key != 'Control' && event.key != 'Alt' && event.key != 'Backspace' && event.key != 'Delete' && event.key != 'CapsLock')  {
+    insertText(event.key);
+  }
+  
+})
+
+
 
 
