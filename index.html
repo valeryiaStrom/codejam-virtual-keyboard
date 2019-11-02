@@ -1,0 +1,675 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Codejam Virtual Keyboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <script src="./script.js"></script>
+
+  <div class="wrapper">
+    <textarea class="output" name="output" id="output" cols="70" rows="5"></textarea>
+    <div class="keyboard">
+
+      <div class="row">
+        <div class="key">
+          <span class="key_eng backquote backquote_eng">
+            <span class="key_down case case_down">`</span>
+            <span class="key_up case case_up">~</span>
+          </span>
+          <span class="key_ru backquote backquote_ru">
+            <span class="case case_down">ё</span>
+            <span class="case case_up">Ё</span>
+          </span>
+        </div>
+        <div class="key">
+          <span class="key_eng digit-one digit-one_eng">
+            <span class="case case_down">1</span>
+            <span class="case case_up">!</span>
+          </span>
+          <span class="key_ru digit-one digit-one_ru">
+            <span class="case case_down">1</span>
+            <span class="case case_up">!</span>
+          </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng digit-two digit-twoe_eng">
+                <span class="case case_down">2</span>
+                <span class="case case_up">@</span>
+              </span>
+              <span class="key_ru digit-two digit-two_ru">
+                <span class="case case_down">2</span>
+                <span class="case case_up">"</span>
+              </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng digit-three digit-three_eng">
+                <span class="case case_down">3</span>
+                <span class="case case_up">#</span>
+              </span>
+              <span class="key_ru digit-three digit-three_ru">
+                <span class="case case_down">3</span>
+                <span class="case case_up">№</span>
+              </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng digit-four digit-four_eng">
+                <span class="case case_down">4</span>
+                <span class="case case_up">$</span>
+              </span>
+              <span class="key_ru digit-four digit-four_ru">
+                <span class="case case_down">4</span>
+                <span class="case case_up">;</span>
+              </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng digit-five digit-five_eng">
+                <span class="case case_down">5</span>
+                <span class="case case_up">%</span>
+              </span>
+              <span class="key_ru digit-five digit-five_ru">
+                <span class="case case_down">5</span>
+                <span class="case case_up">%</span>
+              </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng digit-six digit-six_eng">
+                <span class="case case_down">6</span>
+                <span class="case case_up">^</span>
+              </span>
+              <span class="key_ru digit-six digit-six_ru">
+                <span class="case case_down">6</span>
+                <span class="case case_up">:</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng digit-seven digit-seven_eng">
+                <span class="case case_down">7</span>
+                <span class="case case_up">&</span>
+              </span>
+              <span class="key_ru digit-seven digit-seven_ru">
+                <span class="case case_down">7</span>
+                <span class="case case_up">?</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng digit-eight digit-eight_eng">
+                <span class="case case_down">8</span>
+                <span class="case case_up">*</span>
+              </span>
+              <span class="key_ru digit-eight digit-eight_ru">
+                <span class="case case_down">8</span>
+                <span class="case case_up">*</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng digit-nine digit-nine_eng">
+                <span class="case case_down">9</span>
+                <span class="case case_up">(</span>
+              </span>
+              <span class="key_ru digit-nine digit-nine_ru">
+                <span class="case case_down">9</span>
+                <span class="case case_up">(</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng digit-zero digit-zero_eng">
+                <span class="case case_down">0</span>
+                <span class="case case_up">)</span>
+              </span>
+              <span class="key_ru digit-zero digit-zero_ru">
+                <span class="case case_down">0</span>
+                <span class="case case_up">)</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng dash dash_eng">
+                <span class="case case_down">-</span>
+                <span class="case case_up">_</span>
+              </span>
+              <span class="key_ru dash dash_ru">
+                <span class="case case_down">-</span>
+                <span class="case case_up">_</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng equal-sign equal-sign_eng">
+                <span class="case case_down">=</span>
+                <span class="case case_up">+</span>
+              </span>
+              <span class="key_ru equal-sign equal-sign_ru">
+                <span class="case case_down">=</span>
+                <span class="case case_up">+</span>
+              </span> 
+        </div>
+        <div class="key key_backspace">
+            <span class="key_eng backspace backspace_eng">
+                <span class="case case_down">Backspace</span>
+                <span class="case case_up">Backspace</span>
+              </span>
+              <span class="key_ru backspace backspace_ru">
+                <span class="case case_down">Backspace</span>
+                <span class="case case_up">Backspace</span>
+              </span> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="key key_tab">
+            <span class="key_eng tab tab_eng">
+                <span class="case case_down">Tab</span>
+                <span class="case case_up">Tab</span>
+              </span>
+              <span class="key_ru tab tab_ru">
+                <span class="case case_down">Tab</span>
+                <span class="case case_up">Tab</span>
+              </span>      
+        </div>
+        <div class="key">
+            <span class="key_eng letter-Q letter-Q_eng">
+                <span class="case case_down">q</span>
+                <span class="case case_up">Q</span>
+              </span>
+              <span class="key_ru letter-Q letter-Q_ru">
+                <span class="case case_down">й</span>
+                <span class="case case_up">Й</span>
+              </span>  
+        </div>
+        <div class="key">
+            <span class="key_eng letter-W letter-W_eng">
+                <span class="case case_down">w</span>
+                <span class="case case_up">W</span>
+              </span>
+              <span class="key_ru letter-W letter-W_ru">
+                <span class="case case_down">ц</span>
+                <span class="case case_up">Ц</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-E letter-E_eng">
+                <span class="case case_down">e</span>
+                <span class="case case_up">E</span>
+              </span>
+              <span class="key_ru letter-E letter-E_ru">
+                <span class="case case_down">у</span>
+                <span class="case case_up">У</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-R letter-R_eng">
+                <span class="case case_down">r</span>
+                <span class="case case_up">R</span>
+              </span>
+              <span class="key_ru letter-R letter-R_ru">
+                <span class="case case_down">к</span>
+                <span class="case case_up">К</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-T letter-T_eng">
+                <span class="case case_down">t</span>
+                <span class="case case_up">T</span>
+              </span>
+              <span class="key_ru letter-T letter-T_ru">
+                <span class="case case_down">е</span>
+                <span class="case case_up">Е</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-Y letter-Y_eng">
+                <span class="case case_down">y</span>
+                <span class="case case_up">Y</span>
+              </span>
+              <span class="key_ru letter-Y letter-Y_ru">
+                <span class="case case_down">н</span>
+                <span class="case case_up">Н</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-U letter-U_eng">
+                <span class="case case_down">u</span>
+                <span class="case case_up">U</span>
+              </span>
+              <span class="key_ru letter-U letter-U_ru">
+                <span class="case case_down">г</span>
+                <span class="case case_up">Г</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-I letter-I_eng">
+                <span class="case case_down">i</span>
+                <span class="case case_up">I</span>
+              </span>
+              <span class="key_ru letter-I letter-I_ru">
+                <span class="case case_down">ш</span>
+                <span class="case case_up">Ш</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-O letter-O_eng">
+                <span class="case case_down">o</span>
+                <span class="case case_up">O</span>
+              </span>
+              <span class="key_ru letter-O letter-O_ru">
+                <span class="case case_down">щ</span>
+                <span class="case case_up">Щ</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-P letter-P_eng">
+                <span class="case case_down">p</span>
+                <span class="case case_up">P</span>
+              </span>
+              <span class="key_ru letter-P letter-P_ru">
+                <span class="case case_down">з</span>
+                <span class="case case_up">З</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng bracket-left bracket-left_eng">
+                <span class="case case_down">[</span>
+                <span class="case case_up">{</span>
+              </span>
+              <span class="key_ru bracket-left lbracket-left_ru">
+                <span class="case case_down">х</span>
+                <span class="case case_up">Х</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng bracket-right bracket-right_eng">
+                <span class="case case_down">]</span>
+                <span class="case case_up">}</span>
+              </span>
+              <span class="key_ru bracket-right bracket-right_ru">
+                <span class="case case_down">ъ</span>
+                <span class="case case_up">Ъ</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng slash-backward slash-backward_eng">
+                <span class="case case_down">\</span>
+                <span class="case case_up">|</span>
+              </span>
+              <span class="key_ru slash-backward slash-backward_ru">
+                <span class="case case_down">\</span>
+                <span class="case case_up">/</span>
+              </span> 
+        </div>
+        <div class="key key_delete">
+            <span class="key_eng delete delete_eng">
+                <span class="case case_down">del</span>
+                <span class="case case_up">del</span>
+              </span>
+              <span class="key_ru delete delete_ru">
+                <span class="case case_down">del</span>
+                <span class="case case_up">del</span>
+              </span> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="key key_capslock">
+            <span class="key_eng capslock capslock_eng">
+                <span class="case case_down">Caps Lock</span>
+                <span class="case case_up">Caps Lock</span>
+              </span>
+              <span class="key_ru capslock capslock_ru">
+                <span class="case case_down">Caps Lock</span>
+                <span class="case case_up">Caps Lock</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-A letter-A_eng">
+                <span class="case case_down">a</span>
+                <span class="case case_up">A</span>
+              </span>
+              <span class="key_ru letter-A letter-A_ru">
+                <span class="case case_down">ф</span>
+                <span class="case case_up">Ф</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-S letter-S_eng">
+                <span class="case case_down">s</span>
+                <span class="case case_up">S</span>
+              </span>
+              <span class="key_ru letter-S letter-S_ru">
+                <span class="case case_down">ы</span>
+                <span class="case case_up">Ы</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-D letter-D_eng">
+                <span class="case case_down">d</span>
+                <span class="case case_up">D</span>
+              </span>
+              <span class="key_ru letter-D letter-D_ru">
+                <span class="case case_down">в</span>
+                <span class="case case_up">В</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-F letter-F_eng">
+                <span class="case case_down">f</span>
+                <span class="case case_up">F</span>
+              </span>
+              <span class="key_ru letter-F letter-F_ru">
+                <span class="case case_down">а</span>
+                <span class="case case_up">А</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-G letter-G_eng">
+                <span class="case case_down">g</span>
+                <span class="case case_up">G</span>
+              </span>
+              <span class="key_ru letter-G letter-G_ru">
+                <span class="case case_down">п</span>
+                <span class="case case_up">П</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-H letter-H_eng">
+                <span class="case case_down">h</span>
+                <span class="case case_up">H</span>
+              </span>
+              <span class="key_ru letter-H letter-H_ru">
+                <span class="case case_down">р</span>
+                <span class="case case_up">Р</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-J letter-J_eng">
+                <span class="case case_down">j</span>
+                <span class="case case_up">J</span>
+              </span>
+              <span class="key_ru letter-J letter-J_ru">
+                <span class="case case_down">о</span>
+                <span class="case case_up">О</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-K letter-K_eng">
+                <span class="case case_down">k</span>
+                <span class="case case_up">K</span>
+              </span>
+              <span class="key_ru letter-K letter-K_ru">
+                <span class="case case_down">л</span>
+                <span class="case case_up">Л</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-L letter-L_eng">
+                <span class="case case_down">l</span>
+                <span class="case case_up">L</span>
+              </span>
+              <span class="key_ru letter-L letter-L_ru">
+                <span class="case case_down">д</span>
+                <span class="case case_up">Д</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng semicolon semicolon_eng">
+                <span class="case case_down">;</span>
+                <span class="case case_up">:</span>
+              </span>
+              <span class="key_ru semicolon semicolon_ru">
+                <span class="case case_down">ж</span>
+                <span class="case case_up">Ж</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng quote quote_eng">
+                <span class="case case_down">'</span>
+                <span class="case case_up">"</span>
+              </span>
+              <span class="key_ru quote quote_ru">
+                <span class="case case_down">э</span>
+                <span class="case case_up">Э</span>
+              </span> 
+        </div>
+        <div class="key key_enter">
+            <span class="key_eng enter enter_eng">
+                <span class="case case_down">Enter</span>
+                <span class="case case_up">Enter</span>
+              </span>
+              <span class="key_ru enter enter_ru">
+                <span class="case case_down">Enter</span>
+                <span class="case case_up">Enter</span>
+              </span> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="key key_shift">
+            <span class="key_eng shift-left shift-left_eng">
+                <span class="case case_down">Shift</span>
+                <span class="case case_up">Shift</span>
+              </span>
+              <span class="key_ru shift-left shift-left_ru">
+                <span class="case case_down">Shift</span>
+                <span class="case case_up">Shift</span>
+              </span>       
+        </div>
+        <div class="key">
+            <span class="key_eng letter-Z letter-Z_eng">
+                <span class="case case_down">z</span>
+                <span class="case case_up">Z</span>
+              </span>
+              <span class="key_ru letter-Z letter-Z_ru">
+                <span class="case case_down">я</span>
+                <span class="case case_up">Я</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-X letter-X_eng">
+                <span class="case case_down">x</span>
+                <span class="case case_up">X</span>
+              </span>
+              <span class="key_ru letter-X letter-X_ru">
+                <span class="case case_down">ч</span>
+                <span class="case case_up">Ч</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-C letter-C_eng">
+                <span class="case case_down">c</span>
+                <span class="case case_up">C</span>
+              </span>
+              <span class="key_ru letter-C letter-C_ru">
+                <span class="case case_down">с</span>
+                <span class="case case_up">С</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-V letter-V_eng">
+                <span class="case case_down">v</span>
+                <span class="case case_up">V</span>
+              </span>
+              <span class="key_ru letter-V letter-V_ru">
+                <span class="case case_down">м</span>
+                <span class="case case_up">М</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-B letter-B_eng">
+                <span class="case case_down">b</span>
+                <span class="case case_up">B</span>
+              </span>
+              <span class="key_ru letter-B letter-B_ru">
+                <span class="case case_down">и</span>
+                <span class="case case_up">И</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-N letter-N_eng">
+                <span class="case case_down">n</span>
+                <span class="case case_up">N</span>
+              </span>
+              <span class="key_ru letter-N letter-N_ru">
+                <span class="case case_down">т</span>
+                <span class="case case_up">Т</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng letter-M letter-M_eng">
+                <span class="case case_down">m</span>
+                <span class="case case_up">M</span>
+              </span>
+              <span class="key_ru letter-M letter-M_ru">
+                <span class="case case_down">ь</span>
+                <span class="case case_up">Ь</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng comma comma_eng">
+                <span class="case case_down">,</span>
+                <span class="case case_up">&lt;</span>
+              </span>
+              <span class="key_ru comma comma_ru">
+                <span class="case case_down">б</span>
+                <span class="case case_up">Б</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng dot dot_eng">
+                <span class="case case_down">.</span>
+                <span class="case case_up">&gt;</span>
+              </span>
+              <span class="key_ru dot dot_ru">
+                <span class="case case_down">ю</span>
+                <span class="case case_up">Ю</span>
+              </span> 
+        </div>
+        <div class="key">
+            <span class="key_eng slash-forward slash-forward_eng">
+                <span class="case case_down">/</span>
+                <span class="case case_up">?</span>
+              </span>
+              <span class="key_ru slash-forward slash-forward_ru">
+                <span class="case case_down">.</span>
+                <span class="case case_up">,</span>
+              </span> 
+        </div>
+        <div class="key key_arrow">
+            <span class="key_eng arrow-up arrow-up_eng">
+                <span class="case case_down">arrUp</span>
+                <span class="case case_up">arrUp</span>
+              </span>
+              <span class="key_ru arrow-up arrow-up_ru">
+                <span class="case case_down">arrUp</span>
+                <span class="case case_up">arrUp</span>
+              </span> 
+        </div>
+        <div class="key key_shift key_shift-right">
+            <span class="key_eng shift-right shift-right_eng">
+                <span class="case case_down">Shift</span>
+                <span class="case case_up">Shift</span>
+              </span>
+              <span class="key_ru shift-right shift-right_ru">
+                <span class="case case_down">Shift</span>
+                <span class="case case_up">Shift</span>
+              </span> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="key key_ctrl">
+            <span class="key_eng ctrl-left ctrl-left_eng">
+                <span class="case case_down">Ctrl</span>
+                <span class="case case_up">Ctrl</span>
+              </span>
+              <span class="key_ru ctrl-left ctrl-left_ru">
+                <span class="case case_down">Ctrl</span>
+                <span class="case case_up">Ctrl</span>
+              </span>     
+        </div>
+        <div class="key key_win">
+            <span class="key_eng win win_eng">
+                <span class="case case_down">Win</span>
+                <span class="case case_up">Win</span>
+              </span>
+              <span class="key_ru win win_ru">
+                <span class="case case_down">Win</span>
+                <span class="case case_up">Win</span>
+              </span>
+        </div>
+        <div class="key key_alt">
+            <span class="key_eng alt-left alt-left_eng">
+                <span class="case case_down">Alt</span>
+                <span class="case case_up">Alt</span>
+              </span>
+              <span class="key_ru alt-left alt-left_ru">
+                <span class="case case_down">Alt</span>
+                <span class="case case_up">Alt</span>
+              </span>
+        </div>
+        <div class="key key_space">
+            <span class="key_eng space space_eng">
+                <span class="case case_down">.</span>
+                <span class="case case_up">.</span>
+              </span>
+              <span class="key_ru space space_ru">
+                <span class="case case_down">.</span>
+                <span class="case case_up">.</span>
+              </span>
+        </div>
+        <div class="key key_alt">
+            <span class="key_eng alt-right alt-right_eng">
+                <span class="case case_down">Alt</span>
+                <span class="case case_up">Alt</span>
+              </span>
+              <span class="key_ru alt-right alt-right_ru">
+                <span class="case case_down">Alt</span>
+                <span class="case case_up">Alt</span>
+              </span>
+        </div>
+        <div class="key key_arrow">
+            <span class="key_eng arrow-left arrow-left_eng">
+                <span class="case case_down">arrLf</span>
+                <span class="case case_up">arrLf</span>
+              </span>
+              <span class="key_ru arrow-left arrow-left_ru">
+                <span class="case case_down">arrLf</span>
+                <span class="case case_up">arrLf</span>
+              </span> 
+        </div>
+        <div class="key key_arrow">
+            <span class="key_eng arrow-bottom arrow-bottom_eng">
+                <span class="case case_down">arrBt</span>
+                <span class="case case_up">arrBt</span>
+              </span>
+              <span class="key_ru arrow-bottom arrow-bottom_ru">
+                <span class="case case_down">arrBt</span>
+                <span class="case case_up">arrBt</span>
+              </span> 
+        </div>
+        <div class="key key_arrow">
+            <span class="key_eng arrow-right arrow-right_eng">
+                <span class="case case_down">arrRt</span>
+                <span class="case case_up">arrRt</span>
+              </span>
+              <span class="key_ru arrow-right arrow-right_ru">
+                <span class="case case_down">arrRt</span>
+                <span class="case case_up">arrRt</span>
+              </span> 
+        </div>
+        <div class="key key_ctrl">
+            <span class="key_eng ctrl-right ctrl-right_eng">
+                <span class="case case_down">Ctrl</span>
+                <span class="case case_up">Ctrl</span>
+              </span>
+              <span class="key_ru ctrl-right ctrl-right_ru">
+                <span class="case case_down">Ctrl</span>
+                <span class="case case_up">Ctrl</span>
+              </span>  
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</body>
+</html>
