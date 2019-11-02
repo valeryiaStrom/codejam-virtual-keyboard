@@ -258,6 +258,12 @@ function insertText(text) {
   }
 }
 
+function deleteText() {
+  if (textarea.innerHTML != '') {
+    textarea.innerHTML = textarea.innerHTML.slice(0, -1);
+  }
+}
+
 function highlightKey(key) {
  key.classList.add('key_pressed');
 }
@@ -267,6 +273,10 @@ let keys = document.querySelectorAll('.key');
 document.addEventListener('keydown', function(event) {
   if (event.key != 'Tab' && event.key != 'Shift' && event.key != 'Control' && event.key != 'Alt' && event.key != 'Backspace' && event.key != 'Delete' && event.key != 'CapsLock')  {
     insertText(event.key);
+  }
+
+  if (event.key === 'Backspace' || event.key === 'Delete') {
+    deleteText();
   }
 
   for (let i = 0; i < keys.length; i++) {
