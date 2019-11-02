@@ -256,14 +256,28 @@ function insertText(text) {
   } else {
     textarea.innerHTML = textarea.innerHTML + text;
   }
-  
 }
+
+function highlightKey(key) {
+ key.classList.add('key_pressed');
+}
+
+let keys = document.querySelectorAll('.key');
 
 document.addEventListener('keydown', function(event) {
   if (event.key != 'Tab' && event.key != 'Shift' && event.key != 'Control' && event.key != 'Alt' && event.key != 'Backspace' && event.key != 'Delete' && event.key != 'CapsLock')  {
     insertText(event.key);
   }
-  
+
+  for (let i = 0; i < keys.length; i++) {
+
+    if (keys[i].innerHTML.includes(event.code)) {
+      highlightKey(keys[i]);
+      document.addEventListener('keyup', function(event) {
+        keys[i].classList.remove('key_pressed');
+      })
+    }
+  } 
 })
 
 
