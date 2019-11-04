@@ -456,7 +456,7 @@ document.addEventListener('keydown', function(event) {
 
     let input;
 
-    if (isLanguageSwitched) {
+    if (isLanguageSwitched === false) {
 
       if (isCapsLockPressed === true) {
           
@@ -564,7 +564,7 @@ for (let i = 0; i < keys.length; i++) {
     } else {
       let input;
 
-      if (isLanguageSwitched) {
+      if (isLanguageSwitched === false) {
 
         if (isCapsLockPressed === true) {
           input = keys[i].firstChild.lastChild.textContent;
