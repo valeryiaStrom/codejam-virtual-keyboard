@@ -522,7 +522,13 @@ document.addEventListener('keydown', function(event) {
     if (isCapsLockPressed === false) {
       
       isCapsLockPressed = true;
-      
+
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].classList.contains('key_capslock')) {
+          highlightKey(keys[i]);
+        }
+      }
+
       if (isLanguageSwitched) {
       
         for (let i = 0; i < keys.length; i++) {
@@ -546,6 +552,11 @@ document.addEventListener('keydown', function(event) {
     } else {
       
       isCapsLockPressed = false;
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].classList.contains('key_capslock')) {
+          keys[i].classList.remove('key_pressed');
+        }
+      }
 
       if (isLanguageSwitched) {
         
@@ -636,12 +647,8 @@ document.addEventListener('keydown', function(event) {
   for (let i = 0; i < keys.length; i++) {
 
     if (keys[i].innerHTML.includes(event.code)) {
-      highlightKey(keys[i]);
       if (event.code != 'CapsLock') {
-        document.addEventListener('keyup', function(event) {
-          keys[i].classList.remove('key_pressed');
-        })
-      } else if (event.code === 'CapsLock' && isCapsLockPressed === false) {
+        highlightKey(keys[i]);
         document.addEventListener('keyup', function(event) {
           keys[i].classList.remove('key_pressed');
         })
