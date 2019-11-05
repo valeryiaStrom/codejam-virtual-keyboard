@@ -252,7 +252,7 @@ for (let i = 0; i < fifthRowKeys.length; i++) {
 
 let keys = document.querySelectorAll('.key');
 let isCapsLockPressed = false;
-let isLanguageSwitched = false; //(false is for english (default))
+let isLanguageSwitched = false; 
 
 function highlightKey(key) {
   key.classList.add('key_pressed');
@@ -645,8 +645,63 @@ for (let i = 0; i < keys.length; i++) {
       insertSpace();
     } else if (keys[i].classList.contains('key_tab')) {
         insertTab();
-    } else if (keys[i].classList.contains('key_win') || keys[i].classList.contains('key_alt')) {
+    } else if (keys[i].classList.contains('key_alt')) {
         textarea.focus();
+    } else if (keys[i].classList.contains('key_win')) {
+
+      if (isLanguageSwitched) {
+
+        isLanguageSwitched = false;
+
+        if (isCapsLockPressed) {
+          
+          for (let j = 0; j < keys.length; j++) {
+
+            keys[j].lastChild.firstChild.style.display = 'none';
+            keys[j].lastChild.lastChild.style.display = 'none';
+            keys[j].firstChild.firstChild.style.display = 'none';
+            keys[j].firstChild.lastChild.style.display = 'inline';
+
+          }
+        } else {
+          
+          for (let j = 0; j < keys.length; j++) {
+              
+            keys[j].lastChild.firstChild.style.display = 'none';
+            keys[j].lastChild.lastChild.style.display = 'none';
+            keys[j].firstChild.lastChild.style.display = 'none';
+            keys[j].firstChild.firstChild.style.display = 'inline';
+
+          }
+        }
+
+      } else {
+        
+        isLanguageSwitched = true;
+        
+        if (isCapsLockPressed) {
+          
+          for (let j = 0; j < keys.length; j++) {
+
+            keys[j].firstChild.firstChild.style.display = 'none';
+            keys[j].firstChild.lastChild.style.display = 'none';
+            keys[j].lastChild.firstChild.style.display = 'none';
+            keys[j].lastChild.lastChild.style.display = 'inline';
+          }
+
+        } else {
+          
+          for (let j = 0; j < keys.length; j++) {
+ 
+            keys[j].firstChild.firstChild.style.display = 'none';
+            keys[j].firstChild.lastChild.style.display = 'none';
+            keys[j].lastChild.lastChild.style.display = 'none';
+            keys[j].lastChild.firstChild.style.display = 'inline';
+
+          }
+        }
+      }
+
     } else if (keys[i].classList.contains('key_shift') || keys[i].classList.contains('key_shift-right')) {
 
       if (event.ctrlKey === true) {
