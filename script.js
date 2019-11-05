@@ -585,7 +585,7 @@ document.addEventListener('keydown', function(event) {
 
     if (isLanguageSwitched === false) {
 
-      if (isCapsLockPressed === true) {
+      if (isCapsLockPressed === true || event.shiftKey === true) {
           
         for (let i = 0; i < keys.length; i++) {
 
@@ -604,7 +604,7 @@ document.addEventListener('keydown', function(event) {
       }
 
     } else {
-        if (isCapsLockPressed === true) {
+        if (isCapsLockPressed === true || event.shiftKey === true) {
 
           for (let i = 0; i < keys.length; i++) {
 
@@ -889,14 +889,14 @@ for (let i = 0; i < keys.length; i++) {
 
       if (isLanguageSwitched === false) {
 
-        if (isCapsLockPressed === true) {
+        if (isCapsLockPressed === true || event.shiftKey === true) {
           input = keys[i].firstChild.lastChild.textContent;
         } else {
           input = keys[i].firstChild.firstChild.textContent;
         }
 
       } else {
-        if (isCapsLockPressed === true) {
+        if (isCapsLockPressed === true || event.shiftKey === true) {
           input = keys[i].lastChild.lastChild.textContent;
         } else {
           input = keys[i].lastChild.firstChild.textContent;
