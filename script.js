@@ -381,6 +381,7 @@ function moveToRight() {
 
 //for real keyboard
 document.addEventListener('keydown', function(event) {
+  console.log(event);
 
   textarea.focus();
   event.preventDefault();
@@ -631,9 +632,15 @@ document.addEventListener('keydown', function(event) {
 
     if (keys[i].innerHTML.includes(event.code)) {
       highlightKey(keys[i]);
-      document.addEventListener('keyup', function(event) {
-        keys[i].classList.remove('key_pressed');
-      })
+      if (event.code != 'CapsLock') {
+        document.addEventListener('keyup', function(event) {
+          keys[i].classList.remove('key_pressed');
+        })
+      } else if (event.code === 'CapsLock' && isCapsLockPressed === false) {
+        document.addEventListener('keyup', function(event) {
+          keys[i].classList.remove('key_pressed');
+        })
+      }
     }
   }
 })
@@ -824,6 +831,7 @@ for (let i = 0; i < keys.length; i++) {
     } else if (keys[i].classList.contains('key_capslock')) {
         if (isCapsLockPressed === false) {
           isCapsLockPressed = true;
+          highlightKey(keys[i]);
 
           if (isLanguageSwitched) {
 
@@ -849,6 +857,8 @@ for (let i = 0; i < keys.length; i++) {
           }
         } else {
           isCapsLockPressed = false;
+
+          keys[i].classList.remove('key_pressed');
 
           if (isLanguageSwitched) {
 

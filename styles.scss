@@ -29,10 +29,6 @@
           cursor: pointer;
           user-select: none;
 
-            &_pressed {
-              background: #99ffbb;
-            }
-
             &_backspace {
               width: 100px;
               background: #004d1a;
@@ -82,6 +78,10 @@
             }
 
             &:active {
+              background: #99ffbb;
+            }
+
+            &_pressed {
               background: #99ffbb;
             }
 
