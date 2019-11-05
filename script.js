@@ -252,7 +252,7 @@ for (let i = 0; i < fifthRowKeys.length; i++) {
 
 let keys = document.querySelectorAll('.key');
 let isCapsLockPressed = false;
-let isLanguageSwitched = false;
+let isLanguageSwitched = false; //(false is for english (default))
 
 function highlightKey(key) {
   key.classList.add('key_pressed');
@@ -381,7 +381,7 @@ function moveToRight() {
 
 //for real keyboard
 document.addEventListener('keydown', function(event) {
-  console.log(event);
+  //console.log(event);
   textarea.focus();
   event.preventDefault();
 
@@ -400,9 +400,48 @@ document.addEventListener('keydown', function(event) {
   if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
     if (event.ctrlKey === true) {
       if (isLanguageSwitched === false) {
-        isLanguageSwitched = true;
+        isLanguageSwitched = true; //переключаем на русский
+        //здесь написать замену символов на вирт клаве на русский
+
+        if (isCapsLockPressed) {
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].firstChild.firstChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'inline';
+          }
+          
+        } else {
+          //console.log('lalala');
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].firstChild.firstChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'none';
+            keys[i].lastChild.firstChild.style.display = 'inline';
+          }
+        }
       } else {
-        isLanguageSwitched = false;
+        isLanguageSwitched = false; // переключаем на англ
+        //здесь написать замену символов на вирт клаве на англ
+
+        if (isCapsLockPressed) {
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].lastChild.firstChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'inline';
+          }
+        } else {
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].lastChild.firstChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'none';
+            keys[i].firstChild.firstChild.style.display = 'inline';
+          }
+        }
       }
     }
   } else if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
@@ -410,8 +449,52 @@ document.addEventListener('keydown', function(event) {
     if (event.shiftKey === true) {
       if (isLanguageSwitched === false) {
         isLanguageSwitched = true;
+
+        //here
+
+        if (isCapsLockPressed) {
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].firstChild.firstChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'inline';
+          }
+          
+        } else {
+          //console.log('lalala');
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].firstChild.firstChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'none';
+            keys[i].lastChild.firstChild.style.display = 'inline';
+          }
+        }
+
+
       } else {
         isLanguageSwitched = false;
+
+        //here
+        if (isCapsLockPressed) {
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].lastChild.firstChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'none';
+            keys[i].firstChild.lastChild.style.display = 'inline';
+          }
+        } else {
+
+          for (let i = 0; i < keys.length; i++) {
+
+            keys[i].lastChild.firstChild.style.display = 'none';
+            keys[i].lastChild.lastChild.style.display = 'none';
+            keys[i].firstChild.firstChild.style.display = 'inline';
+          }
+        }
+
+
       }
     }
   }
@@ -430,9 +513,46 @@ document.addEventListener('keydown', function(event) {
 
   if (event.code === 'CapsLock') {
     if (isCapsLockPressed === false) {
+      console.log('капс выключен');
       isCapsLockPressed = true;
+      console.log('включили капслок');
+      
+      if (isLanguageSwitched) {
+        console.log('языкык переключен на русский, значит отобразим заглавные русские');
+        for (let i = 0; i < keys.length; i++) {
+
+          keys[i].lastChild.firstChild.style.display = 'none';
+          keys[i].lastChild.lastChild.style.display = 'inline';
+        }
+
+      } else {
+        console.log('язык английский - отобразим заглавные английские');
+        for (let i = 0; i < keys.length; i++) {
+
+          keys[i].firstChild.firstChild.style.display = 'none';
+          keys[i].firstChild.lastChild.style.display = 'inline';
+        }
+      }
     } else {
+      console.log('капс уже включен');
       isCapsLockPressed = false;
+      console.log('выключили капслок');
+
+      if (isLanguageSwitched) {
+        console.log('языкык переключен на русский, значит отобразим строчные русские');
+        for (let i = 0; i < keys.length; i++) {
+
+          keys[i].lastChild.firstChild.style.display = 'inline';
+          keys[i].lastChild.lastChild.style.display = 'none';
+        }
+      } else {
+        console.log('язык английский - отобразим строчные английские');
+        for (let i = 0; i < keys.length; i++) {
+
+          keys[i].firstChild.firstChild.style.display = 'inline';
+          keys[i].firstChild.lastChild.style.display = 'none';
+        }
+      }
     }
   }
 
