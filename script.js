@@ -250,6 +250,11 @@ for (let i = 0; i < fifthRowKeys.length; i++) {
   spanRu.insertAdjacentHTML('beforeend', `<span class="case case_up">${row5[i][4]}</span>`);
 }
 
+let hint = document.createElement('div');
+hint.className = 'hint';
+hint.insertAdjacentHTML('afterbegin', '<span>To switch the language press <i>Win</i> on virtual keyboard you see on the screen. Or <i></i>Shift+Ctrl</i> combination on your real keyboard.</span>');
+wrapper.append(hint);
+
 let keys = document.querySelectorAll('.key');
 let isCapsLockPressed = false;
 let isLanguageSwitched = false; 
