@@ -1,0 +1,121 @@
+.output {
+  display: block;
+  width: 85%;
+  height: 300px;
+  margin: 20px auto 0;
+  padding: 10px;
+}
+
+.keyboard {
+  width: 60%;
+  margin: 20px auto 0;
+  padding-top: 8px;
+
+    .row {
+      width: 100%;
+      margin-bottom: 8px;
+
+        .key {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          margin-left: 9px;
+          font-weight: 500;
+          line-height: 40px;
+          text-align: center;
+          color: #fff;
+          background: #00802b;
+          border-radius: 3px;
+          cursor: pointer;
+          user-select: none;
+
+            &_backspace {
+              width: 100px;
+              background: #004d1a;
+            }
+
+            &_tab {
+              width: 50px;
+              background: #004d1a;
+            }
+
+            &_delete {
+              background: #004d1a;
+              text-transform: uppercase;
+            }
+
+            &_capslock {
+              width: 100px;
+              background: #004d1a;
+            }
+
+            &_enter {
+              width: 90px;
+              background: #004d1a;
+            }
+
+            &_shift {
+              width: 100px;
+              background: #004d1a;
+            }
+
+            &_shift-right {
+              width: 90px;
+              background: #004d1a;
+            }
+
+            &_space {
+              width: 346px;
+              color: rgba(0, 128, 43, 0);
+            }
+
+            &_ctrl, &_win, &_alt, &_arrow {
+              background: #004d1a;
+            }
+
+            &:hover {
+              background: #006622;
+            }
+
+            &:active {
+              background: #99ffbb;
+            }
+
+            &_pressed {
+              background: #99ffbb;
+            }
+
+            &_eng {
+
+              .case {
+
+                  &_up {
+                    display: none;
+                  }
+              }
+            }
+
+            &_ru {
+
+                .case {
+
+                  &_up {
+                    display: none;
+                  }
+
+                  &_down {
+                    display: none;
+                  }
+                }
+            }
+        }
+    }   
+}
+
+.hint {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #111111;
+  margin: 0 auto;
+  text-align: center;
+}
